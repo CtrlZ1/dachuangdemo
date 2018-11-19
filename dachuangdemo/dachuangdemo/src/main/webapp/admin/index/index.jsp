@@ -31,7 +31,7 @@
 				    <a href="javascript:;"><i class="iconfont">&#xe608;</i>图形化展示</a>
 				    <dl class="layui-nav-child">
 				      <dd><a href="javascript:;" data-url="/page2_1" data-id='3' data-text="楼盘基本数据"><span class="l-line"></span>楼盘基本数据</a></dd>
-				      <dd><a href="javascript:;" data-url="/page2_2" data-id='9' data-text="用户点评数据"><span class="l-line"></span>用户点评数据</a></dd>
+				      <dd><a href="javascript:;" data-url="/page2_2" data-id='9' data-text="散点图"><span class="l-line"></span>用户点评数据</a></dd>
 						<dd><a href="javascript:;" data-url="/page2_3" data-id='10' data-text="城市房价热力图"><span class="l-line"></span>城市房价热力图</a></dd>
 					</dl>
 				  </li>
