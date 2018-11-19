@@ -40,17 +40,38 @@ public class FontController extends HttpServlet {
         b.add(4);
         LineAndBar lineAndBar=new LineAndBar(a,b);
         model.addAttribute("data",toJson(lineAndBar));
-
-        ArrayList<HotPicture> aHp=new ArrayList<HotPicture>();
-        HotPicture hp=new HotPicture(125.3247893,43.8868593,125);
-        HotPicture hp1=new HotPicture(125.3,43.8868593,125);
-        aHp.add(hp);
-        aHp.add(hp1);
-        request.getSession().setAttribute("hot",toJson(aHp));
         return "index";
     }
 
-    @RequestMapping("/hotPicture")
+
+    @RequestMapping("/page1_1")
+    public String page1_1(HttpServletResponse response, HttpServletRequest request, Model model){
+
+        model.addAttribute("t",9);
+        return "menu1";
+    }
+
+    @RequestMapping("/page1_2")
+    public String page1_2(HttpServletResponse response, HttpServletRequest request, Model model){
+
+        model.addAttribute("t",9);
+        return "menu2";
+    }
+
+    @RequestMapping("/page2_1")
+    public String page2_1(HttpServletResponse response, HttpServletRequest request, Model model){
+
+        model.addAttribute("t",9);
+        return "article-list";
+    }
+
+    @RequestMapping("/page2_2")
+    public String page2_2(HttpServletResponse response, HttpServletRequest request, Model model){
+
+        model.addAttribute("t",9);
+        return "danye-list";
+    }
+    @RequestMapping("/page2_3")
     public String hotPicture(HttpServletResponse response, HttpServletRequest request, Model model) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -63,11 +84,19 @@ public class FontController extends HttpServlet {
         return "hotPicture";
     }
 
-    @RequestMapping("/test")
-    public String test(Model model){
+    @RequestMapping("/email")
+    public String mail(HttpServletResponse response, HttpServletRequest request, Model model){
+        return "email";
+    }
 
-        model.addAttribute("t",9);
-        return "test";
+    @RequestMapping("/person")
+    public String person(HttpServletResponse response, HttpServletRequest request, Model model){
+        return "admin-info";
+    }
+
+    @RequestMapping("/system")
+    public String system(HttpServletResponse response, HttpServletRequest request, Model model){
+        return "system";
     }
 
 }
