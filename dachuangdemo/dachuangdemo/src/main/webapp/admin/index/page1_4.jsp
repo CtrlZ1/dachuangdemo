@@ -45,7 +45,7 @@
 				<th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
 				<th >楼盘名</th>
 				<th>户型</th>
-				<th>distribute</th>
+				<th>详细户型</th>
 				<th>销售状态</th>
 				<th>面积</th>
 

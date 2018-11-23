@@ -43,8 +43,8 @@
 			<tr>
 				<th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose"></th>
 				<th >楼盘名</th>
-				<th>distance</th>
-				<th>point</th>
+				<th>平均距离</th>
+				<th>公交站点</th>
 				<th>公交线路</th>
 			</tr>
 			</thead>
