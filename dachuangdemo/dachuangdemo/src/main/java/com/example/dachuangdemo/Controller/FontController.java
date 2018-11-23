@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -133,6 +135,21 @@ public class FontController extends HttpServlet {
         return "hotPicture";
     }
 
+    @RequestMapping("/LookInformation")
+    @ResponseBody
+    public String LookInformation(@RequestParam String ObjectUser,Model model){
+        //System.out.println(ObjectUser);
+        System.out.println(ObjectUser);
+        BaseInfo baseInfo= baseInfoService.getOneByName(ObjectUser);
+        //System.out.println(baseInfo.getName());
+        List<Comment> comment= commentService.getComment();
+        List<CommunityInfo> communityInfo= communityInfoService.getCommunityInfo();
+        List<HouseDesign> houseDesign= houseDesignService.getHouseDesign();
+        List<SaleInfo> saleInfo= saleInfoService.getSaleInfo();
+        List<Transport> transport= transportService.getTransport();
+        model.addAttribute("house",baseInfo);
+        return "success";
+    }
     @RequestMapping("/email")
     public String mail(HttpServletResponse response, HttpServletRequest request, Model model){
         return "email";
@@ -147,5 +164,6 @@ public class FontController extends HttpServlet {
     public String system(HttpServletResponse response, HttpServletRequest request, Model model){
         return "system";
     }
+
 
 }
