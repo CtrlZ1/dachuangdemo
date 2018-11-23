@@ -25,6 +25,10 @@
 				    <dl class="layui-nav-child">
 				      <dd><a href="javascript:;" data-url="/page1_1" data-id='1' data-text="楼盘基本数据"><span class="l-line"></span>楼盘基本数据</a></dd>
 				      <dd><a href="javascript:;" data-url="/page1_2" data-id='2' data-text="用户点评数据"><span class="l-line"></span>用户点评数据</a></dd>
+                        <dd><a href="javascript:;" data-url="/page1_3" data-id='3' data-text="楼盘小区数据"><span class="l-line"></span>楼盘小区数据</a></dd>
+                        <dd><a href="javascript:;" data-url="/page1_4" data-id='4' data-text="楼盘户型数据"><span class="l-line"></span>楼盘户型数据</a></dd>
+                        <dd><a href="javascript:;" data-url="/page1_5" data-id='5' data-text="楼盘销售数据"><span class="l-line"></span>楼盘销售数据</a></dd>
+                        <dd><a href="javascript:;" data-url="/page1_6" data-id='6' data-text="楼盘交通数据"><span class="l-line"></span>楼盘交通数据</a></dd>
 				    </dl>
 				  </li>
 				  <li class="layui-nav-item">

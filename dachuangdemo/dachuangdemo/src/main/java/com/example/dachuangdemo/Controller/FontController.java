@@ -1,8 +1,11 @@
 package com.example.dachuangdemo.Controller;
 
-import com.example.dachuangdemo.model.HotPicture;
-import com.example.dachuangdemo.model.LineAndBar;
+import com.example.dachuangdemo.model.dataBase.*;
+import com.example.dachuangdemo.model.dataGraph.HotPicture;
+import com.example.dachuangdemo.model.dataGraph.LineAndBar;
+import com.example.dachuangdemo.service.*;
 import net.sf.json.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +15,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class FontController extends HttpServlet {
+    //声明每个service都要加上@Autowired
+    @Autowired
+    BaseInfoService baseInfoService;
+    @Autowired
+    CommentService commentService;
+    @Autowired
+    CommunityInfoService communityInfoService;
+    @Autowired
+    HouseDesignService houseDesignService;
+    @Autowired
+    SaleInfoService saleInfoService;
+    @Autowired
+    TransportService transportService;
 
     private static String toJson(Object resultobj){
         if(resultobj!=null){
@@ -40,6 +57,7 @@ public class FontController extends HttpServlet {
         b.add(4);
         LineAndBar lineAndBar=new LineAndBar(a,b);
         model.addAttribute("data",toJson(lineAndBar));
+
         return "index";
     }
 
@@ -47,16 +65,47 @@ public class FontController extends HttpServlet {
     @RequestMapping("/page1_1")
     public String page1_1(HttpServletResponse response, HttpServletRequest request, Model model){
 
-        model.addAttribute("t",9);
-        return "menu1";
+        List<BaseInfo> baseInfo= baseInfoService.getBaseInfo();
+        model.addAttribute("baseInfo",baseInfo);
+        return "page1_1";
     }
 
     @RequestMapping("/page1_2")
     public String page1_2(HttpServletResponse response, HttpServletRequest request, Model model){
-
-        model.addAttribute("t",9);
-        return "menu2";
+        List<Comment> comment= commentService.getComment();
+        model.addAttribute("comment",comment);
+        return "page1_2";
     }
+
+    @RequestMapping("/page1_3")
+    public String page1_3(HttpServletResponse response, HttpServletRequest request, Model model){
+        List<CommunityInfo> communityInfo= communityInfoService.getCommunityInfo();
+        model.addAttribute("communityInfo",communityInfo);
+        return "page1_3";
+    }
+
+    @RequestMapping("/page1_4")
+    public String page1_4(HttpServletResponse response, HttpServletRequest request, Model model){
+        List<HouseDesign> houseDesign= houseDesignService.getHouseDesign();
+        model.addAttribute("houseDesign",houseDesign);
+        return "page1_4";
+    }
+
+    @RequestMapping("/page1_5")
+    public String page1_5(HttpServletResponse response, HttpServletRequest request, Model model){
+        List<SaleInfo> saleInfo= saleInfoService.getSaleInfo();
+        model.addAttribute("saleInfo",saleInfo);
+        return "page1_5";
+    }
+
+    @RequestMapping("/page1_6")
+    public String page1_6(HttpServletResponse response, HttpServletRequest request, Model model){
+        List<Transport> transport= transportService.getTransport();
+        model.addAttribute("transport",transport);
+        return "page1_6";
+    }
+
+
 
     @RequestMapping("/page2_1")
     public String page2_1(HttpServletResponse response, HttpServletRequest request, Model model){

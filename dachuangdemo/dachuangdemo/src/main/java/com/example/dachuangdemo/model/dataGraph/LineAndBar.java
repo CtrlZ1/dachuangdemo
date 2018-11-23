@@ -1,4 +1,4 @@
-package com.example.dachuangdemo.model;
+package com.example.dachuangdemo.model.dataGraph;
 
 import java.util.ArrayList;
 
