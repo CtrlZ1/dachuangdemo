@@ -1,5 +1,6 @@
 package com.example.dachuangdemo.Controller;
 
+import com.example.dachuangdemo.Action.SendEmail;
 import com.example.dachuangdemo.model.HotPicture;
 import com.example.dachuangdemo.model.LineAndBar;
 import com.example.dachuangdemo.model.Scatter;
@@ -55,6 +56,12 @@ public class FontController extends HttpServlet {
         return "index";
     }
 
+    //Email
+    @RequestMapping("/sendemail")
+    public String sendemail(){
+        SendEmail.sendEmail2();
+        return null;
+    }
 
     @RequestMapping("/page1_1")
     public String page1_1(HttpServletResponse response, HttpServletRequest request, Model model){
