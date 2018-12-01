@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dachuangdemo.dao.BaseInfoDao">
+    <resultMap id="BaseResultMap" type="com.example.dachuangdemo.model.dataBase.BaseInfo" >
+        <result column="housename" property="housename" />
+        <result column="saleState" property="saleState" />
+        <result column="feature" property="feature" />
+        <result column="price" property="price" />
+        <result column="sumPrice" property="sumPrice" />
+        <result column="propertise" property="propertise" />
+        <result column="developer" property="developer" />
+        <result column="region" property="region" />
+        <result column="location" property="location" />
+    </resultMap>
+    <select id="selectOne" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from baseinfo where housename=#{xx}
+    </select>
+</mapper>

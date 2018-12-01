@@ -1,4 +1,4 @@
-package com.example.dachuangdemo.model;
+package com.example.dachuangdemo.model.dataGraph;
 
 public class HotPicture {
     private double lng;

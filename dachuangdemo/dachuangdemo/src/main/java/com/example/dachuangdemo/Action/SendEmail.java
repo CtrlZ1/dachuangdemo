@@ -1,6 +1,6 @@
 package com.example.dachuangdemo.Action;
 
-import com.example.dachuangdemo.model.Mail.Mail;
+import com.example.dachuangdemo.model.Mail.Mail_action;
 import com.sun.mail.util.MailSSLSocketFactory;
 
 import javax.mail.*;
@@ -62,7 +62,7 @@ public class SendEmail {
         String password = "dxrfjkfbbrtfbfac";//发件人邮箱登录密码
         String filename = "E:\\idea work\\大创\\dachuangdemo\\dachuangdemo\\dachuangdemo\\src\\main\\resources\\test.txt";//附件URL
 
-        Mail.send(smtp,from,to,subject,content,username,password,filename);
+        Mail_action.send(smtp,from,to,subject,content,username,password,filename);
     }
     public static void sendEmail2()
     {

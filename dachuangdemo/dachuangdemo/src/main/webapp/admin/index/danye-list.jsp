@@ -1,16 +1,14 @@
-<%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html style="height: 100%">
 <head>
     <meta charset="utf-8">
 </head>
 <body style="height: 100%; margin: 0">
-<div id="container" style="height: 400px;width: 800px;"></div>
+<div id="container" style="height: 100%;width: 100%;"></div>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript"
-        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
@@ -21,27 +19,32 @@
     var myChart = echarts.init(dom);
     var app = {};
     option = null;
-    var data = ${data};
-    //alert(data[0].city)
-    var geoCoordMap = eval("("+'${map}'+")")
-    alert(geoCoordMap['北京'])
+    var data = [
+        {name: '长沙', value: 175},
+        {name: '衢州', value: 177},
+        {name: '廊坊', value: 193},
+        {name: '菏泽', value: 194},
+        {name: '合肥', value: 229},
+        {name: '武汉', value: 273},
+        {name: '大庆', value: 279}
+    ];
+    var geoCoordMap = {
+        '长沙':[113,28.21],
+        '衢州':[118.88,28.97],
+        '廊坊':[116.7,39.53],
+        '菏泽':[115.480656,35.23375],
+        '合肥':[117.27,31.86],
+        '武汉':[114.31,30.52],
+        '大庆':[125.03,46.58]
+    };
 
-    /*{
-        '北京':[116.46,39.92],
-        '上海':[121.48,31.22],
-        '广州':[113.23,23.16],
-        '深圳':[114.07,22.62],
-    };*/
     var convertData = function (data) {
         var res = [];
         for (var i = 0; i < data.length; i++) {
-            var geoCoord = geoCoordMap[data[i].city];
-            //alert(geoCoord)
-            //alert(data[i].city)
+            var geoCoord = geoCoordMap[data[i].name];
             if (geoCoord) {
-                //alert(data[i].city)
                 res.push({
-                    name: data[i].city,
+                    name: data[i].name,
                     value: geoCoord.concat(data[i].value)
                 });
             }
@@ -56,7 +59,7 @@
             sublink: 'http://www.pm25.in',
             left: 'center'
         },
-        tooltip: {
+        tooltip : {
             trigger: 'item'
         },
         bmap: {
@@ -163,7 +166,7 @@
                 }]
             }
         },
-        series: [
+        series : [
             {
                 name: 'pm2.5',
                 type: 'scatter',
@@ -220,8 +223,7 @@
                 zlevel: 1
             }
         ]
-    };
-    ;
+    };;
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }

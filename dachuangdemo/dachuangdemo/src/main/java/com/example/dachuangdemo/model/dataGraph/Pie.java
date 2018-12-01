@@ -1,6 +1,6 @@
-package com.example.dachuangdemo.model;
+package com.example.dachuangdemo.model.dataGraph;
 
-public class myData {
+public class Pie {
 	
 	private String name;
 	private String  value;
@@ -16,12 +16,12 @@ public class myData {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	public myData(String name, String value) {
+	public Pie(String name, String value) {
 		super();
 		this.name = name;
 		this.value = value;
 	}
-	public myData() {
+	public Pie() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

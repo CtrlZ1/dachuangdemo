@@ -9,7 +9,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.util.Properties;
 
-public class Mail {
+public class Mail_action {
     private MimeMessage mimeMsg; //MIME邮件对象
     private Session session; //邮件会话对象
     private Properties props; //系统属性
@@ -23,7 +23,7 @@ public class Mail {
      * Constructor
      * @param smtp 邮件发送服务器
      */
-    public Mail(String smtp){
+    public Mail_action(String smtp){
         setSmtpHost(smtp);
         createMimeMessage();
     }
@@ -230,7 +230,7 @@ public class Mail {
      * @return boolean
      */
     public static boolean send(String smtp,String from,String to,String subject,String content,String username,String password) {
-        Mail theMail = new Mail(smtp);
+        Mail_action theMail = new Mail_action(smtp);
         theMail.setNeedAuth(true); //需要验证
 
         if(!theMail.setSubject(subject)) return false;
@@ -256,7 +256,7 @@ public class Mail {
      * @return boolean
      */
     public static boolean sendAndCc(String smtp,String from,String to,String copyto,String subject,String content,String username,String password) {
-        Mail theMail = new Mail(smtp);
+        Mail_action theMail = new Mail_action(smtp);
         theMail.setNeedAuth(true); //需要验证
 
         if(!theMail.setSubject(subject)) return false;
@@ -283,7 +283,7 @@ public class Mail {
      * @return
      */
     public static boolean send(String smtp,String from,String to,String subject,String content,String username,String password,String filename) {
-        Mail theMail = new Mail(smtp);
+        Mail_action theMail = new Mail_action(smtp);
         theMail.setNeedAuth(true); //需要验证
 
         if(!theMail.setSubject(subject)) return false;
@@ -311,7 +311,7 @@ public class Mail {
      * @return
      */
     public static boolean sendAndCc(String smtp,String from,String to,String copyto,String subject,String content,String username,String password,String filename) {
-        Mail theMail = new Mail(smtp);
+        Mail_action theMail = new Mail_action(smtp);
         theMail.setNeedAuth(true); //需要验证
 
         if(!theMail.setSubject(subject)) return false;

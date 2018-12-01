@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dachuangdemo.dao.CommunityInfoDao">
+    <resultMap id="BaseResultMap" type="com.example.dachuangdemo.model.dataBase.CommunityInfo" >
+        <result column="housename" property="housename" />
+        <result column="buildingType" property="buildingType" />
+        <result column="propertyYear" property="propertyYear" />
+        <result column="plotRate" property="plotRate" />
+        <result column="greenRate" property="greenRate" />
+        <result column="household" property="household" />
+        <result column="floorCondition" property="floorCondition" />
+        <result column="projectPlan" property="projectPlan" />
+        <result column="propertyFee" property="propertyFee" />
+        <result column="propertyCompany" property="propertyCompany" />
+        <result column="parkNum" property="parkNum" />
+        <result column="parkProportion" property="parkProportion" />
+    </resultMap>
+    <select id="selectOne" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from CommunityInfo where housename=#{xx}
+    </select>
+</mapper>
