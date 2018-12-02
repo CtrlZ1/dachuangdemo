@@ -12,37 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="../../static/admin/layui/css/layui.css" />
 		<link rel="stylesheet" type="text/css" href="../../static/admin/css/admin.css" />
 	</head>
-    <script src="../../static/admin/js/jquery-3.3.1.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function(){
-            var Name;
-            $(".chose1").click(function(){
-                $("#LookInformation").show();
-                var name=this.cells[1].innerHTML;
-                Name=name;
-                //alert(name);
-            });
-            $("#LookInformationButton").click(function(){
-                $.ajax({
-                    type:'POST',  //提交方法是POST
-                    url:'/LookInformation', //请求的路径
-                    data:{ObjectUser:JSON.stringify(Name)}, //以JSON字符串形式把 user 传到后台
-                    dataType:'text', //后台返回的数据类型是html文本
-                    timeout:1000,  //请求超时时间，毫秒
-                    error:function(){  //请求失败的回调方法
-                        alert("跳转失败")
-                    },success:function(result){
-                        //alert(result);
-                        if(result != "" && result == "success"){
-                            window.location.href='admin/index/aim.jsp';
-                        }else if(result == "fail"){
-                            alert("跳转失败了")
-                        }
-                    }
-                })
-            })
-        })
-    </script>
+
 	<body>
 		<div class="page-content-wrap">
 					<form class="layui-form" action="">
@@ -58,9 +28,7 @@
 								</select>
 							</div>
 							<button class="layui-btn layui-btn-normal" lay-submit="search">搜索</button>
-							<div class="layui-inline">
-								<a id="LookInformation" style="display: none; margin-left: 500px;"><input class="layui-btn layui-btn-normal" id="LookInformationButton" type="button" value="详细信息"></a>
-							</div>
+							<button class="layui-btn layui-btn-normal" lay-submit="search">查询评论</button>
 						</div>
 					</form>
 					<div class="layui-form" id="table-list">
@@ -91,36 +59,20 @@
 								</tr>
 							</thead>
 
-							<tbody>
-								<tr id='node-1' class="parent collapsed">
-									<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-									<td >1</td>
-									<td >待售</td>
-									<td>123</td>
-									<td>单价</td>
-									<td>总价</td>
-									<td>类型</td>
-									<td>开发商</td>
-									<td>行政区</td>
-									<td>详细地址</td>
-								</tr>
-
+							<tbody
 
 								<c:forEach items="${baseInfo}" var="baseInfo" varStatus="vs">
-									<tr class="chose1">
-										<%--<td>--%>
-											<%--<s:property value="#vs.index+1"/>--%>
-										<%--</td>--%>
+									<tr>
 										<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-										<td class="chose">${baseInfo.name}</td>
-										<td class="chose">${baseInfo.saleState}</td>
-										<td class="chose">${baseInfo.feature}</td>
-										<td class="chose">${baseInfo.price}</td>
-										<td class="chose">${baseInfo.sumPrice}</td>
-										<td class="chose">${baseInfo.propertise}</td>
-										<td class="chose">${baseInfo.developer}</td>
-										<td class="chose">${baseInfo.region}</td>
-										<td class="chose">${baseInfo.location}</td>
+										<td >${baseInfo.name}</td>
+										<td >${baseInfo.saleState}</td>
+										<td >${baseInfo.feature}</td>
+										<td >${baseInfo.price}</td>
+										<td >${baseInfo.sumPrice}</td>
+										<td >${baseInfo.propertise}</td>
+										<td >${baseInfo.developer}</td>
+										<td >${baseInfo.region}</td>
+										<td >${baseInfo.location}</td>
 
 									</tr>
 								</c:forEach>

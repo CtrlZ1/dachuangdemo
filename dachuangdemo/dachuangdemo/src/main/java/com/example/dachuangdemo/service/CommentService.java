@@ -14,4 +14,7 @@ public class CommentService {
     public List<Comment> getComment(){
         return commentDao.selectAll();
     }
+    public int getNum(){
+        return commentDao.getNum();
+    }
 }

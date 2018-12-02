@@ -3,9 +3,9 @@ package com.example.dachuangdemo.model.dataGraph;
 public class HotPicture {
     private double lng;
     private double lat;
-    private double count;
+    private Integer count;
 
-    public HotPicture(double lng, double lat, double count) {
+    public HotPicture(double lng, double lat, Integer count) {
         this.lng = lng;
         this.lat = lat;
         this.count = count;
@@ -27,11 +27,11 @@ public class HotPicture {
         this.lat = lat;
     }
 
-    public double getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(double count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
 }

@@ -49,7 +49,7 @@
 			<c:forEach items="${comment}" var="comment" varStatus="vs">
 				<tr>
 					<td><input type="checkbox" name="" lay-skin="primary" data-id="1"></td>
-					<td >${comment.name}</td>
+					<td >${comment.housename}</td>
 					<td >${comment.text}</td>
 				</tr>
 			</c:forEach>

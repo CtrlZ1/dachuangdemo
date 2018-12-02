@@ -2,7 +2,6 @@ package com.example.dachuangdemo.dao;
 
 import com.example.dachuangdemo.model.dataBase.BaseInfo;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +15,6 @@ public interface  BaseInfoDao {
     String SELECT_FIELDS="*";
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME})
     List<BaseInfo> selectAll();
-
-    public BaseInfo selectOne(@Param("xx")String xx);
+    @Select({"select count(*) from ",TABLE_NAME})
+    int getNum();
 }

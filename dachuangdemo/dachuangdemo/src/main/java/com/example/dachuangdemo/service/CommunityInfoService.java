@@ -14,4 +14,7 @@ public class CommunityInfoService {
     public List<CommunityInfo> getCommunityInfo(){
         return communityInfoDao.selectAll();
     }
+    public int getNum(){
+        return communityInfoDao.getNum();
+    }
 }

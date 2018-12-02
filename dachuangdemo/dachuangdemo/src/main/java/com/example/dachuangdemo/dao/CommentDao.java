@@ -15,4 +15,7 @@ public interface CommentDao {
     String SELECT_FIELDS="*";
     @Select({"select",SELECT_FIELDS,"from",TABLE_NAME})
     List<Comment> selectAll();
+
+    @Select({"select count(*) from ",TABLE_NAME})
+    int getNum();
 }

@@ -25,18 +25,18 @@
 				    <dl class="layui-nav-child">
 				      <dd><a href="javascript:;" data-url="/page1_1" data-id='1' data-text="楼盘基本数据"><span class="l-line"></span>楼盘基本数据</a></dd>
 				      <dd><a href="javascript:;" data-url="/page1_2" data-id='2' data-text="用户点评数据"><span class="l-line"></span>用户点评数据</a></dd>
-                        <dd><a href="javascript:;" data-url="/page1_3" data-id='3' data-text="楼盘小区数据"><span class="l-line"></span>楼盘小区数据</a></dd>
-                        <dd><a href="javascript:;" data-url="/page1_4" data-id='4' data-text="楼盘户型数据"><span class="l-line"></span>楼盘户型数据</a></dd>
-                        <dd><a href="javascript:;" data-url="/page1_5" data-id='5' data-text="楼盘销售数据"><span class="l-line"></span>楼盘销售数据</a></dd>
-                        <dd><a href="javascript:;" data-url="/page1_6" data-id='6' data-text="楼盘交通数据"><span class="l-line"></span>楼盘交通数据</a></dd>
+						<dd><a href="javascript:;" data-url="/page1_3" data-id='3' data-text="楼盘小区数据"><span class="l-line"></span>楼盘小区数据</a></dd>
+						<dd><a href="javascript:;" data-url="/page1_4" data-id='4' data-text="楼盘户型数据"><span class="l-line"></span>楼盘户型数据</a></dd>
+						<dd><a href="javascript:;" data-url="/page1_5" data-id='5' data-text="楼盘销售数据"><span class="l-line"></span>楼盘销售数据</a></dd>
+						<dd><a href="javascript:;" data-url="/page1_6" data-id='6' data-text="楼盘交通数据"><span class="l-line"></span>楼盘交通数据</a></dd>
 				    </dl>
 				  </li>
 				  <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe608;</i>图形化展示</a>
 				    <dl class="layui-nav-child">
-				      <dd><a href="javascript:;" data-url="/page2_1" data-id='3' data-text="楼盘基本数据"><span class="l-line"></span>楼盘基本数据</a></dd>
-				      <dd><a href="javascript:;" data-url="/page2_2" data-id='9' data-text="散点图"><span class="l-line"></span>用户点评数据</a></dd>
-						<dd><a href="javascript:;" data-url="/page2_3" data-id='10' data-text="城市房价热力图"><span class="l-line"></span>城市房价热力图</a></dd>
+				      <dd><a href="javascript:;" data-url="/page2_1" data-id='7' data-text="楼盘基本数据图"><span class="l-line"></span>楼盘基本数据</a></dd>
+				      <dd><a href="javascript:;" data-url="/page2_2" data-id='8' data-text="城市房价热力图"><span class="l-line"></span>城市房价热力图</a></dd>
+						<dd><a href="javascript:;" data-url="/page2_3" data-id='9' data-text="null"><span class="l-line"></span>NULL</a></dd>
 					</dl>
 				  </li>
 				  <li class="layui-nav-item">
@@ -49,7 +49,7 @@
 				    <a href="javascript:;"><i class="iconfont">&#xe60a;</i>RBAC</a>
 				  </li>
 				  <li class="layui-nav-item">
-				    <a href="javascript:;" data-url="/email" data-id='4' data-text="邮件系统"><i class="iconfont">&#xe603;</i>邮件系统</a>
+				    <a href="javascript:;" data-url="admin/index/email.jsp" data-id='4' data-text="邮件系统"><i class="iconfont">&#xe603;</i>邮件系统</a>
 				  </li>
 				  <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe60d;</i>生成静态</a>
@@ -58,10 +58,10 @@
 				    <a href="javascript:;"><i class="iconfont">&#xe600;</i>备份管理</a>
 				  </li>
 				  <li class="layui-nav-item">
-				    <a href="javascript:;" data-url="/person" data-id='5' data-text="个人信息"><i class="iconfont">&#xe606;</i>个人信息</a>
+				    <a href="javascript:;" data-url="admin/index/admin-info.jsp" data-id='5' data-text="个人信息"><i class="iconfont">&#xe606;</i>个人信息</a>
 				  </li>
 				  <li class="layui-nav-item">
-				  	<a href="javascript:;" data-url="/system" data-id='6' data-text="系统设置"><i class="iconfont">&#xe60b;</i>系统设置</a>
+				  	<a href="javascript:;" data-url="admin/index/system.jsp" data-id='6' data-text="系统设置"><i class="iconfont">&#xe60b;</i>系统设置</a>
 				  </li>
 				</ul>
 			</div>
@@ -75,11 +75,11 @@
 						</a>
 					</div>
 					<ul class="layui-nav" lay-filter="rightNav">
-					  <li class="layui-nav-item"><a href="javascript:;" data-url="/email" data-id='4' data-text="邮件系统"><i class="iconfont">&#xe603;</i></a></li>
+					  <li class="layui-nav-item"><a href="javascript:;" data-url="admin/index/email.jsp" data-id='4' data-text="邮件系统"><i class="iconfont">&#xe603;</i></a></li>
 					  <li class="layui-nav-item">
-					    <a href="javascript:;" data-url="/person" data-id='5' data-text="个人信息">超级管理员</a>
+					    <a href="javascript:;" data-url="admin/index/admin-info.jsp" data-id='5' data-text="个人信息">超级管理员</a>
 					  </li>
-					  <li class="layui-nav-item"><a href="javascript:;">退出</a></li>
+					  <li class="layui-nav-item"><a href="/exit">退出</a></li>
 					</ul>
 				</div>
 				<!--主体内容-->

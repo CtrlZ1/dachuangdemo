@@ -1,22 +1,21 @@
 package com.example.dachuangdemo.model.dataGraph;
 
 public class Pie {
-	
 	private String name;
-	private String  value;
+	private int  value;
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getValue() {
+	public int getValue() {
 		return value;
 	}
-	public void setValue(String value) {
+	public void setValue(int value) {
 		this.value = value;
 	}
-	public Pie(String name, String value) {
+	public Pie(String name, int value) {
 		super();
 		this.name = name;
 		this.value = value;

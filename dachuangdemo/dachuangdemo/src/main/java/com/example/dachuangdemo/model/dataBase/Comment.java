@@ -1,19 +1,18 @@
 package com.example.dachuangdemo.model.dataBase;
 public class Comment {
-    private String name;
+    private String housename;
     private String text;
-    public Comment(String name, String text) {
-        this.name = name;
+    public Comment(String housename, String text) {
+        this.housename = housename;
         this.text = text;
     }
 
-
-    public String getName() {
-        return name;
+    public String getHousename() {
+        return housename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHousename(String housename) {
+        this.housename = housename;
     }
 
     public String getText() {

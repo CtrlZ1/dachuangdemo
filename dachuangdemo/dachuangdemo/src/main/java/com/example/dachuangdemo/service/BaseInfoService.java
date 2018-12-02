@@ -14,7 +14,8 @@ public class BaseInfoService {
     public List<BaseInfo> getBaseInfo(){
         return baseInfoDao.selectAll();
     }
-    public BaseInfo getOneByName(String name){
-        return baseInfoDao.selectOne(name);
+    public int getNum(){
+        return baseInfoDao.getNum();
     }
+
 }
