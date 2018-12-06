@@ -24,7 +24,17 @@
 									</div>
 									<div class="right-text-con">
 										<p class="name">评论数</p>
-										<p><span class="color-org">8987</span>数据<span class="iconfont">&#xe628;</span></p>
+										<p>
+											<span class="color-org">
+												<script>
+													var commentNum=${commentNum}
+													document.write(commentNum)
+												</script>
+											</span>数据
+											<span class="iconfont">
+												&#xe628;
+											</span>
+										</p>
 									</div>
 								</a>
 							</li>
@@ -35,7 +45,13 @@
 									</div>
 									<div class="right-text-con">
 										<p class="name">房屋数</p>
-										<p><span class="color-blue">4444</span>数据<span class="iconfont">&#xe628;</span></p>
+										<p><span class="color-blue">
+											<script>
+												var houseNum=${houseNum}
+												document.write(houseNum)
+											</script>
+
+										</span>数据<span class="iconfont">&#xe628;</span></p>
 									</div>
 								</a>
 							</li>
@@ -46,7 +62,14 @@
 									</div>
 									<div class="right-text-con">
 										<p class="name">小区数</p>
-										<p><span class="color-green">2596</span>数据<span class="iconfont">&#xe60f;</span></p>
+										<p><span class="color-green">
+
+											<script>
+												var communityNum=${communityNum}
+												document.write(communityNum)
+											</script>
+
+										</span>数据<span class="iconfont">&#xe60f;</span></p>
 									</div>
 								</a>
 							</li>
